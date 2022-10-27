@@ -16,11 +16,11 @@ int main(int argc, char *argv[])
   if(argc>2||argc<1){
     result=2;
   }
-  
+  if(result!=2){
   while (n < count && fgets(list[n], sizeof(*list), stdin) != NULL){
     ++n; // getting the contacts from .txt file
   }
-
+  }
   if (argv[1] != NULL){
   for(int j = 0; j<strlen(argv[1]);j++) //checking if input only in numbers
   {
