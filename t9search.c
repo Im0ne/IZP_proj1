@@ -12,12 +12,13 @@ int main(int argc, char *argv[])
   {"mnoMNO"}, {"pqrsPQRS"}, {"tuvTUV"}, {"wxyzWXYZ"}, {"+"}};             // 2d array of letters to transform
   char list[count][101]; //contacts                                                                                                              
   char arr[count][101];  //array for transformed contacts                                                                                                              
-  while (n < count && fgets(list[n], sizeof(*list), stdin) != NULL){
-    ++n; // getting the contacts from .txt file
+  
+  if(argc>2||argc<1){
+    result=2;
   }
   
-  if(argc>2){
-    result=2;
+  while (n < count && fgets(list[n], sizeof(*list), stdin) != NULL){
+    ++n; // getting the contacts from .txt file
   }
 
   if (argv[1] != NULL){
