@@ -10,8 +10,8 @@ int main(int argc, char *argv[])
   int result = 1; // variable for check about state of input or output
   char lettonum[10][20] = {{"abcABC"}, {"defDEF"}, {"ghiGHI"}, {"jklJKL"}, 
   {"mnoMNO"}, {"pqrsPQRS"}, {"tuvTUV"}, {"wxyzWXYZ"}, {"+"}};             // 2d array of letters to transform
-  char list[count][101]; //contacts                                                                                                              
-  char arr[count][101];  //array for transformed contacts                                                                                                              
+  char list[count][103]; //contacts                                                                                                              
+  char arr[count][100];  //array for transformed contacts                                                                                                              
 
   if(argc>2){
     result=2;
@@ -22,17 +22,18 @@ int main(int argc, char *argv[])
   {
     if(argv[1][j]<48||argv[1][j]>57||argv[2]!=NULL){ 
       result=2;
-
     }
   }
   }
-
-  if(result==1){ //checking if all ok with input
   
-  while (n < count && fgets(list[n], sizeof(*list), stdin) != NULL){
-    ++n; // getting the contacts from .txt file
+  while (n < count && fgets(list[n], sizeof(*list), stdin) != NULL){ // getting the contacts from .txt file
+    if(strlen(list[n])>100){
+      result=2;
+      break;
+    }
+    ++n;     
   }
-  
+  if(result==1){ //checking if all ok with input
   for (size_t i = 0; i < n ; i++) 
   {
     list[i][strcspn(list[i], "\n")] = 0; // deleting the new line character from 2d array of contacts
@@ -54,9 +55,8 @@ int main(int argc, char *argv[])
     
     else if (strncmp(list[i], argv[1], strlen(argv[1])) != 0)// trying to find contact depending on name of contact
     { 
-      for (int g = 0; g < 101; g++)
+      for (int g = 0; g < 101; g++) // converting letters to numbers
       {
-        // converting letters to numbers
         for (int j = 0; j < 6; j++)
         {
           if (arr[i][g] == lettonum[0][j])
