@@ -1,1 +1,52 @@
-5.4: celkem bodu ====== Prehled hodnoceni ========== 0:format zdrojoveho souboru: chybi hlavicka, odsazeni OK, dlouhe komentare na zvlast radek nebo rozdelit na vice radku. -2:dekompozice problemu na podproblemy: zadne funkce, pouze main 0:komentar - proc je jednou pri tisku vystupu potreba \n a jednou ne? -1: uprava programu aby vystup odpovidal zadani0.9:ok: vyhledani celeho tel. cisla 0.9:ok: vyhledani casti tel. cisla 0.9:ok: vyhledani tel. cisla 0.9:ok: pripad nenalezeno tel. cislo 0.9:ok: vyhledani celeho jmena 0.9:ok: vyhledani casti jmena 0.2:ok: transliterace 2 0.2:ok: transliterace 3 0.2:ok: transliterace 4 0.2:ok: transliterace 5 0.2:ok: transliterace 6 0.2:ok: transliterace 7 0.2:ok: transliterace 8 0.2:ok: transliterace 9 0:spatne: transliterace 0 0:spatne: vyhledani dle prazdneho zadani 0.5:ok: priklad ze zadani 2 0.5:ok: priklad ze zadani 3 0.5:ok: priklad ze zadani 4 0.5:ok: priklad ze zadani 5 0:spatne: (volitelne) vyhledani preruseneho tel. cisla 0:spatne: (volitelne) vyhledani preruseneho jmena 0.3:ok: reakce na neocekavane argumenty ====== Log z prekladu ============= Ok ====== Analyza kodu =============== Ok ====== Log z jednotlivych testu === 0.9:ok: vyhledani celeho tel. cisla 0.9:ok: vyhledani casti tel. cisla 0.9:ok: vyhledani tel. cisla 0.9:ok: pripad nenalezeno tel. cislo 0.9:ok: vyhledani celeho jmena 0.9:ok: vyhledani casti jmena 0.2:ok: transliterace 2 0.2:ok: transliterace 3 0.2:ok: transliterace 4 0.2:ok: transliterace 5 0.2:ok: transliterace 6 0.2:ok: transliterace 7 0.2:ok: transliterace 8 0.2:ok: transliterace 9 0:spatne: transliterace 0 # Neodpovida vzorovemu vystupu # --- testdata/test_s0 2022-10-25 14:30:56.000000000 +0200 # +++ test_s0 2022-11-27 21:20:35.492149000 +0100 # @@ -1,6 +1,8 @@ # cat s1.txt | ./t9search 0 --> # +++, 111 # + - r110 # cat s2.txt | ./t9search 0 --> # sz+, 111 # cat s3.txt | ./t9search 0 --> # +++, 111 # + - r110 0:spatne: vyhledani dle prazdneho zadani # Neodpovida vzorovemu vystupu # --- testdata/test_z1 2022-10-25 14:30:56.000000000 +0200 # +++ test_z1 2022-11-27 21:20:35.522277000 +0100 # @@ -1,4 +1,7 @@ # cat seznam.txt | ./t9search --> # petr dvorak, 603123456 # + - r47 # jana novotna, 777987654 # + - r47 # bedrich smetana ml., 541141120 # + - r47 0.5:ok: priklad ze zadani 2 0.5:ok: priklad ze zadani 3 0.5:ok: priklad ze zadani 4 0.5:ok: priklad ze zadani 5 0:spatne: (volitelne) vyhledani preruseneho tel. cisla # Neodpovida vzorovemu vystupu # --- testdata/test_p1 2022-10-25 14:30:56.000000000 +0200 # +++ test_p1 2022-11-27 21:20:35.611883000 +0100 # @@ -1,2 +1,2 @@ # cat b1.txt | ./t9search 2468 --> # - xxxxxx, 1234567890 # + not found 0:spatne: (volitelne) vyhledani preruseneho jmena # Neodpovida vzorovemu vystupu # --- testdata/test_p2 2022-10-25 14:30:56.000000000 +0200 # +++ test_p2 2022-11-27 21:20:35.633456000 +0100 # @@ -1,2 +1,2 @@ # cat b3.txt | ./t9search 456 --> # - abcdefghijklmnopqrstuvwxyz, 111 # + not found 0.3:ok: reakce na neocekavane argumenty # Invalid input 
+5.4: celkem bodu ====== Prehled hodnoceni ========== 
+0:format zdrojoveho souboru: chybi hlavicka, odsazeni OK, dlouhe komentare na zvlast radek nebo rozdelit na vice radku. 
+-2:dekompozice problemu na podproblemy: zadne funkce, pouze main 
+0:komentar - proc je jednou pri tisku vystupu potreba \n a jednou ne? 
+-1: uprava programu aby vystup odpovidal zadani
+0.9:ok: vyhledani celeho tel. cisla 
+0.9:ok: vyhledani casti tel. cisla 
+0.9:ok: vyhledani tel. cisla
+0.9:ok: pripad nenalezeno tel. cislo
+0.9:ok: vyhledani celeho jmena 
+0.9:ok: vyhledani casti jmena 
+0.2:ok: transliterace 2 
+0.2:ok: transliterace 3 
+0.2:ok: transliterace 4 
+0.2:ok: transliterace 5 
+0.2:ok: transliterace 6 
+0.2:ok: transliterace 7 
+0.2:ok: transliterace 8 
+0.2:ok: transliterace 9 
+0:spatne: transliterace 0 
+0:spatne: vyhledani dle prazdneho zadani 
+0.5:ok: priklad ze zadani 2 
+0.5:ok: priklad ze zadani 3
+0.5:ok: priklad ze zadani 4 
+0.5:ok: priklad ze zadani 5 
+0:spatne: (volitelne) vyhledani preruseneho tel. cisla 
+0:spatne: (volitelne) vyhledani preruseneho jmena 
+0.3:ok: reakce na neocekavane argumenty 
+====== Log z prekladu ============= Ok ====== Analyza kodu =============== Ok ====== Log z jednotlivych testu === 
+0.9:ok: vyhledani celeho tel. cisla
+0.9:ok: vyhledani casti tel. cisla 
+0.9:ok: vyhledani tel. cisla 
+0.9:ok: pripad nenalezeno tel. cislo 
+0.9:ok: vyhledani celeho jmena 
+0.9:ok: vyhledani casti jmena 
+0.2:ok: transliterace 2 
+0.2:ok: transliterace 3 
+0.2:ok: transliterace 4 
+0.2:ok: transliterace 5 
+0.2:ok: transliterace 6 
+0.2:ok: transliterace 7 
+0.2:ok: transliterace 8
+0.2:ok: transliterace 9 
+0:spatne: transliterace 0 # Neodpovida vzorovemu vystupu # --- testdata/test_s0 2022-10-25 14:30:56.000000000 +0200 # +++ test_s0 2022-11-27 21:20:35.492149000 +0100 # @@ -1,6 +1,8 @@ # cat s1.txt | ./t9search 0 --> # +++, 111 # + - r110 # cat s2.txt | ./t9search 0 --> # sz+, 111 # cat s3.txt | ./t9search 0 --> # +++, 111 # + - r110 
+0:spatne: vyhledani dle prazdneho zadani # Neodpovida vzorovemu vystupu # --- testdata/test_z1 2022-10-25 14:30:56.000000000 +0200 # +++ test_z1 2022-11-27 21:20:35.522277000 +0100 # @@ -1,4 +1,7 @@ # cat seznam.txt | ./t9search --> # petr dvorak, 603123456 # + - r47 # jana novotna, 777987654 # + - r47 # bedrich smetana ml., 541141120 # + - r47 
+0.5:ok: priklad ze zadani 2 
+0.5:ok: priklad ze zadani 3 
+0.5:ok: priklad ze zadani 4 
+0.5:ok: priklad ze zadani 5 
+0:spatne: (volitelne) vyhledani preruseneho tel. cisla # Neodpovida vzorovemu vystupu # --- testdata/test_p1 2022-10-25 14:30:56.000000000 +0200 # +++ test_p1 2022-11-27 21:20:35.611883000 +0100 # @@ -1,2 +1,2 @@ # cat b1.txt | ./t9search 2468 --> # - xxxxxx, 1234567890 # + not found 
+0:spatne: (volitelne) vyhledani preruseneho jmena # Neodpovida vzorovemu vystupu # --- testdata/test_p2 2022-10-25 14:30:56.000000000 +0200 # +++ test_p2 2022-11-27 21:20:35.633456000 +0100 # @@ -1,2 +1,2 @@ # cat b3.txt | ./t9search 456 --> # - abcdefghijklmnopqrstuvwxyz, 111 # + not found 
+0.3:ok: reakce na neocekavane argumenty # Invalid input 
